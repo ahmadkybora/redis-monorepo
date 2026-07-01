@@ -1,0 +1,62 @@
+version: "3.8"
+
+services:
+  redis:
+    image: redis:7-alpine
+    container_name: redis_main
+    ports:
+      - "6378:6379"
+    volumes:
+      - redis_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - app-network
+
+  redis-cache:
+    image: redis:7-alpine
+    container_name: redis_cache
+    ports:
+      - "6381:6379"
+    volumes:
+      - redis_cache_data:/data
+    command: redis-server --appendonly yes
+    networks:
+      - app-network
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5673:5672"
+      - "15673:15672"
+    environment:
+      - RABBITMQ_DEFAULT_USER=admin
+      - RABBITMQ_DEFAULT_PASS=admin123
+    volumes:
+      - rabbitmq_data:/var/lib/rabbitmq
+    networks:
+      - app-network
+
+  postgres:
+    image: postgres:15-alpine
+    container_name: postgres_db
+    ports:
+      - "5433:5432"
+    environment:
+      - POSTGRES_USER=appuser
+      - POSTGRES_PASSWORD=apppass
+      - POSTGRES_DB=appdb
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - app-network
+
+volumes:
+  redis_data:
+  redis_cache_data:
+  rabbitmq_data:
+  postgres_data:
+
+networks:
+  app-network:
+    driver: bridge

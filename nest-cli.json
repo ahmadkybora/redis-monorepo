@@ -1,0 +1,46 @@
+{
+  "monorepo": true,
+  "root": ".",
+  "projects": {
+    "api-gateway": {
+      "type": "application",
+      "root": "apps/api-gateway",
+      "entryFile": "main",
+      "sourceRoot": "apps/api-gateway/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/api-gateway/tsconfig.app.json"
+      }
+    },
+    "user-service": {
+      "type": "application",
+      "root": "apps/user-service",
+      "entryFile": "main",
+      "sourceRoot": "apps/user-service/src",
+      "compilerOptions": {
+        "tsConfigPath": "apps/user-service/tsconfig.app.json"
+      }
+    },
+    "redis": {
+      "type": "library",
+      "root": "libs/redis",
+      "entryFile": "index",
+      "sourceRoot": "libs/redis/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/redis/tsconfig.lib.json"
+      }
+    },
+    "rabbitmq": {
+      "type": "library",
+      "root": "libs/rabbitmq",
+      "entryFile": "index",
+      "sourceRoot": "libs/rabbitmq/src",
+      "compilerOptions": {
+        "tsConfigPath": "libs/rabbitmq/tsconfig.lib.json"
+      }
+    }
+  },
+  "compilerOptions": {
+    "webpack": false,
+    "tsConfigPath": "tsconfig.json"
+  }
+}

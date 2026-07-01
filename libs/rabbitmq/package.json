@@ -1,0 +1,23 @@
+{
+  "name": "@app/rabbitmq",
+  "version": "1.0.0",
+  "description": "RabbitMQ Library for NestJS Monorepo",
+  "main": "src/index.ts",
+  "types": "src/index.ts",
+  "dependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0",
+    "@nestjs/microservices": "^10.0.0",
+    "amqplib": "^0.10.3",
+    "reflect-metadata": "^0.1.13",
+    "rxjs": "^7.8.0"
+  },
+  "devDependencies": {
+    "@types/amqplib": "^0.10.4",
+    "typescript": "^5.1.3"
+  },
+  "peerDependencies": {
+    "@nestjs/common": "^10.0.0",
+    "@nestjs/core": "^10.0.0"
+  }
+}

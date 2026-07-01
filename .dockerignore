@@ -1,0 +1,144 @@
+# ========== Node.js ==========
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ========== Build ==========
+dist/
+build/
+*.tsbuildinfo
+
+# ========== Environment ==========
+.env
+.env.local
+.env.*.local
+.env.production
+.env.development
+.env.test
+.env.staging
+
+# ========== Version Control ==========
+.git/
+.gitignore
+.gitattributes
+.gitmodules
+.svn/
+.hg/
+CVS/
+.mercurial/
+
+# ========== IDE ==========
+.vscode/
+.idea/
+*.iml
+*.iws
+*.ipr
+.vscode-test/
+.settings/
+.classpath
+.project
+.projectile
+*.sublime-project
+*.sublime-workspace
+
+# ========== Logs ==========
+logs/
+*.log
+*.log.*
+pm2-*.log
+pm2-*.pid
+
+# ========== Test ==========
+coverage/
+.nyc_output/
+*.test.ts
+*.spec.ts
+__tests__/
+*.test.js
+*.spec.js
+jest.config.js
+test-report.xml
+coverage.lcov
+
+# ========== Cache ==========
+.cache/
+*.cache
+.eslintcache
+.npm/
+.parcel-cache/
+.next/
+.nuxt/
+.vuepress/dist/
+.temp/
+
+# ========== Misc ==========
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+*.swp
+*.swo
+*~
+*.tmp
+*.temp
+desktop.ini
+*.tgz
+*.tar.gz
+*.zip
+*.rar
+*.7z
+*.pkg
+*.dmg
+
+# ========== Docker ==========
+Dockerfile
+docker-compose.yml
+docker-compose*.yml
+.dockerignore
+*.dockerfile
+*.dockerignore
+
+# ========== Secrets ==========
+*.secret
+*.secrets
+*.pem
+*.key
+*.crt
+*.csr
+*.p12
+*.pfx
+
+# ========== Database ==========
+*.db
+*.sqlite
+*.sqlite3
+*.db-journal
+dump.rdb
+appendonly.aof
+*.rdb
+*.aof
+*.sql
+*.dump
+*.backup
+
+# ========== PM2 ==========
+pm2.json
+ecosystem.config.js
+pm2-*.log
+pm2-*.pid
+
+# ========== Misc ==========
+.required_cache
+.optional_cache
+.tern-port
+.prettiercache
+tsconfig.tsbuildinfo
+webpack.config.js
+webpack.*.config.js
