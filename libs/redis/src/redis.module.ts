@@ -3,6 +3,7 @@ import Redis from 'ioredis';
 import { RedisModuleOptions, RedisConnectionConfig } from './redis.interfaces';
 import { REDIS_CLIENT, REDIS_CLIENTS } from './redis.constants';
 import { RedisService } from './redis.service';
+import { RedisIoAdapter } from './redis-io.adapter';
 
 @Global()
 @Module({})
@@ -39,11 +40,19 @@ export class RedisModule {
     });
 
     providers.push(RedisService);
+    // اضافه کردن RedisIoAdapter به عنوان یک Provider
+    providers.push({
+      provide: RedisIoAdapter,
+      useFactory: (app: any, redisService: RedisService) => {
+        return new RedisIoAdapter(app, redisService);
+      },
+      inject: ['APP_REFERENCE', RedisService], // 'APP_REFERENCE' باید در جای دیگری تعریف شود
+    });
 
     return {
       module: RedisModule,
       providers,
-      exports: [RedisService, REDIS_CLIENTS],
+      exports: [RedisService, REDIS_CLIENTS, RedisIoAdapter],
     };
   }
 
